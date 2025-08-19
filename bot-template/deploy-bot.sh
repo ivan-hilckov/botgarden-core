@@ -74,7 +74,7 @@ log "Running preflight checks..."
 
 # Check required files
 [[ ! -f "Dockerfile" ]] && error "Dockerfile not found in current directory"
-[[ ! -f "docker-compose.bot.yml" ]] && error "docker-compose.bot.yml not found in current directory"
+[[ ! -f "docker-compose.yml" ]] && error "docker-compose.yml not found in current directory"
 
 # Validate required bot configuration
 [[ -z "${BOT_TOKEN:-}" ]] && error "BOT_TOKEN is required in .env file"
@@ -99,10 +99,10 @@ ssh_exec "
     cd $BOT_REMOTE_DIR
     
     # Stop existing bot if running
-    docker compose -f docker-compose.bot.yml down 2>/dev/null || true
+    docker compose down 2>/dev/null || true
     
     # Build and start bot
-    docker compose -f docker-compose.bot.yml up -d --build --force-recreate --wait --wait-timeout 60
+    docker compose up -d --build --force-recreate --wait --wait-timeout 60
     
     echo 'Bot deployment completed'
 "
