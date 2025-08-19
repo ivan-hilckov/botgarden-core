@@ -22,7 +22,7 @@ dp = Dispatcher()
 @dp.message()
 async def echo_handler(message: types.Message):
     """Simple echo handler"""
-    await message.answer(f"🤖 Hello from {BOT_NAME}! You said: {message.text}")
+    await message.answer(f"🤖 Hello 111 from {BOT_NAME}! You said: {message.text}")
 
 async def health_check(request):
     """Health check endpoint"""
