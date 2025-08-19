@@ -82,6 +82,18 @@ target/
 profile_default/
 ipython_config.py
 
+reports/
+
+# Infrastructure files that shouldn't be committed
+.env
+logs/
+certs/
+backups/
+
+# Bot instances (keep template only)
+*-bot/
+!bot-template/
+
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:

@@ -1,0 +1,29 @@
+# Bot service configuration
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${BOT_NAME}
+    restart: unless-stopped
+    env_file:
+      - .env
+    expose:
+      - "${BOT_PORT:-8080}"
+    networks:
+      - botgarden
+    volumes:
+      - bot-data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  bot-data:
+    driver: local
+
+networks:
+  botgarden:
+    external: true

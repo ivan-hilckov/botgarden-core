@@ -1,0 +1,25 @@
+# Botgarden Core - Production Telegram Bot Infrastructure
+
+This is a infrastructure project for hosting multiple Telegram bots on a single VPS using Docker, Nginx, and PostgreSQL.
+
+## Project Context
+
+**Primary Purpose**: Deploy and manage multiple Telegram bots with enterprise-grade infrastructure
+**Target Environment**: Ubuntu VPS (botgarden.tech / 66.179.93.106)
+**Tech Stack**: Docker, Nginx, PostgreSQL, Let's Encrypt, Python/aiogram
+**Architecture**: Containerized microservices with reverse proxy and shared database
+
+## Key Components
+
+- **Core Infrastructure**: Docker Compose stack with Nginx, PostgreSQL, Certbot
+- **Bot Framework**: Standardized bot templates with webhook routing
+- **Security**: SSL termination, container isolation, firewall rules
+- **Operations**: Automated deployment, backup, monitoring, updates
+- **Documentation**: Comprehensive plans (PLAN_CLAUDE.md, PLAN_GPT.md, ROADMAP.md)
+
+## Required Report Format
+
+When making changes, include a minimal report in exactly this format:
+**Report**: [1 sentence, maximum 15 words describing what was accomplished]
+
+Example: "Created comprehensive .cursorrules file with security, deployment, and development guidelines."
